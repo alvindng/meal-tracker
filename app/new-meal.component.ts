@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'new-meal',
   outputs: ['onSubmitNewMeal'],
   template: `
-    <div class='meal-form'>
+    <div class='meal-form col-sm-6'>
     <h3>Add Meal:</h3>
     <input placeholder="Name" class="input-lg" #newName>
     <input placeholder="Details" class="input-lg" #newDetails>
@@ -23,7 +23,7 @@ export class NewMealComponent{
     this.onSubmitNewMeal.emit({
       name: userName.value,
       details: userDetails.value,
-      calories: userCalories.value
+      calories: parseInt(userCalories.value)
     });
     userName.value="";
   }

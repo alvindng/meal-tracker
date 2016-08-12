@@ -1,6 +1,8 @@
 .jumbotron {
   text-align: center;
-  color: blue;
+  color: white;
+  background-color: #99ddff;
+  text-shadow: 2px 2px #ff0000;
 }
 
 .selected {
@@ -8,7 +10,6 @@
 }
 
 .meal-form {
-  margin-top: 80px;
   margin-bottom: 80px;
 }
 
@@ -17,4 +18,18 @@
   margin-left: 10px;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+body {
+  background-color: #b3e6cc;
+}
+
+.filter {
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.well {
+  background-color: #e6ffe6;
 }

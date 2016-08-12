@@ -7,18 +7,24 @@ import { Meal } from './meal.model';
   template: `
     <div class='meal-form'>
     <h3>Add Meal:</h3>
-    <input placeholder="Description" class="input-lg" #newName>
-    <button (click)='addMeal(newName)' class='btn-lg add-button btn-success'>Add</button>
+    <input placeholder="Name" class="input-lg" #newName>
+    <input placeholder="Details" class="input-lg" #newDetails>
+    <input placeholder="Calories" class="input-lg" #newCalories>
+    <button (click)='addMeal(newName, newDetails, newCalories)' class='btn-lg add-button btn-success'>Add</button>
     </div>
   `
 })
 export class NewMealComponent{
-  public onSubmitNewMeal: EventEmitter<Meal>;
+  public onSubmitNewMeal: EventEmitter<Object>;
   constructor(){
     this.onSubmitNewMeal = new EventEmitter();
   }
-  addMeal(userName: HTMLInputElement){
-    this.onSubmitNewMeal.emit(userName.value);
+  addMeal(userName: HTMLInputElement, userDetails: HTMLInputElement, userCalories: HTMLInputElement){
+    this.onSubmitNewMeal.emit({
+      name: userName.value,
+      details: userDetails.value,
+      calories: userCalories.value
+    });
     userName.value="";
   }
 }

@@ -13,5 +13,4 @@ import { Meal } from './meal.model';
 
 export class MealComponent {
   public meal: Meal;
-
 }

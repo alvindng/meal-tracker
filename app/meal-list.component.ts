@@ -10,7 +10,8 @@ import { MealComponent } from './meal.component';
   template: `
     <meal-display
     *ngFor="#currentMeal of mealList"
-    (click)="mealWasSelected(currentMeal)"
+    (click)="mealClicked(currentMeal)"
+    [class.selected]='currentMeal === selectedMeal'
     [meal]="currentMeal">
     </meal-display>
   `
